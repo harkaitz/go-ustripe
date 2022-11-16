@@ -16,12 +16,12 @@ all:     all-go
 install: install-go
 clean:   clean-go
 all-go:
-	@echo "B bin/ustripe     ./cmd/ustripe"
-	@go build -o bin/ustripe     ./cmd/ustripe
+	@echo "B bin/ustripe$(EXE) ./cmd/ustripe"
+	@go build -o bin/ustripe$(EXE) ./cmd/ustripe
 install-go: all-go
 	@install -d $(DESTDIR)$(PREFIX)/bin
-	@echo I bin/ustripe
-	@cp bin/ustripe     $(DESTDIR)$(PREFIX)/bin
+	@echo I bin/ustripe$(EXE)
+	@cp bin/ustripe$(EXE) $(DESTDIR)$(PREFIX)/bin
 clean-go:
 	rm -f bin/ustripe
 ## -- AUTO-GO --
